@@ -1,0 +1,147 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  background-image: url("../../asserts/images/mainBackgroundImage.png"); /* your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Login Card */
+.login-box {
+  position: relative;
+  z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 240, 245, 0.95),
+    rgba(255, 228, 235, 0.95)
+  );
+
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 380px;
+  width: 100%;
+
+  box-shadow: 0 10px 30px rgba(255, 105, 135, 0.25);
+
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 182, 193, 0.4);
+
+  text-align: center;
+}
+
+/* Title */
+.login-box h2 {
+  color: #b03060;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #a0526d;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 12px;
+  color: #8b3a62;
+}
+
+.required {
+  color: red;
+}
+
+/* Error */
+.fieldError {
+  font-size: 12px;
+  color: #d6336c;
+  margin-top: 5px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(135deg, #ff6f91, #ff9671);
+  border: none;
+  color: #fff;
+
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff4e7a, #ff7a5c);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #f5b7c5;
+}
+
+/* Links */
+.links {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.links a {
+  color: #d63384;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+.links a:hover {
+  color: #a61e5c;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .login-container {
+    background-size: contain;
+    background-position: top;
+  }
+
+  .login-box {
+    margin: 20px;
+    padding: 20px;
+  }
+}

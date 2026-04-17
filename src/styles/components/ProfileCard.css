@@ -1,0 +1,112 @@
+.profile-card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(201, 62, 100, 0.15);
+}
+
+.profile-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.profile-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-card-image img {
+  transform: scale(1.05);
+}
+
+.verification-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.verification-badge.verified {
+  background: rgba(16, 185, 129, 0.9);
+  color: white;
+}
+
+.verification-badge.not-verified {
+  background: rgba(245, 158, 11, 0.9);
+  color: white;
+}
+
+.profile-card-content {
+  padding: 20px;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.verified-icon {
+  color: #10b981;
+  font-size: 1rem;
+}
+
+.profile-details {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #6b4e5e;
+  margin-bottom: 8px;
+}
+
+.profile-profession {
+  font-size: 0.85rem;
+  color: #c93e64;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.profile-religion {
+  font-size: 0.8rem;
+  color: #8a6a7a;
+}
+
+.btn-view-profile {
+  background: transparent;
+  border: 1px solid #e86f8c;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: #c93e64;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.btn-view-profile:hover {
+  background: #e86f8c;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .profile-card-image {
+    height: 180px;
+  }
+}
