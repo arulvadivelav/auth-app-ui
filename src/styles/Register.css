@@ -328,7 +328,7 @@
   margin-bottom: 5px;
 }
 
-.required { color: red; }
+.required { color: rgb(255, 255, 255); }
 
 .fieldError {
   font-size: 12px;
@@ -425,7 +425,7 @@
 .input-group label {
   font-size: 12px;
   font-weight: 600;
-  color: #8b3a62;
+  color: #ffffff;
   margin-bottom: 5px;
 }
 

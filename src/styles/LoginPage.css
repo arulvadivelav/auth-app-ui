@@ -11,7 +11,7 @@
   min-height: 100vh;
   width: 100%;
 
-  background-image: url("../../asserts/images/mainBackgroundImage.png"); /* your image */
+  background-image: url("../assets/images/mainBackgroundImage.png"); /* your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,9 +37,7 @@
   z-index: 1;
 
   background: linear-gradient(
-    135deg,
-    rgba(255, 240, 245, 0.95),
-    rgba(255, 228, 235, 0.95)
+    135deg, #a32b41
   );
 
   padding: 40px 30px;
@@ -57,12 +55,12 @@
 
 /* Title */
 .login-box h2 {
-  color: #b03060;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
 .subtitle {
-  color: #a0526d;
+  color: #ffffff;
   margin-bottom: 25px;
   font-size: 14px;
 }
@@ -80,7 +78,7 @@
 }
 
 .required {
-  color: red;
+  color: rgb(255, 255, 255);
 }
 
 /* Error */
@@ -95,7 +93,7 @@ button {
   width: 100%;
   padding: 12px;
 
-  background: linear-gradient(135deg, #ff6f91, #ff9671);
+  background: linear-gradient(135deg, #e86f8c, #c93e64);
   border: none;
   color: #fff;
 
@@ -123,13 +121,13 @@ button:disabled {
 }
 
 .links a {
-  color: #d63384;
+  color: #ffffff;
   text-decoration: none;
   margin: 0 6px;
 }
 
 .links a:hover {
-  color: #a61e5c;
+  color: #e13381;
   text-decoration: underline;
 }
 
@@ -144,4 +142,30 @@ button:disabled {
     margin: 20px;
     padding: 20px;
   }
+}
+
+.nav-arrows {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.arrow-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 18px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }

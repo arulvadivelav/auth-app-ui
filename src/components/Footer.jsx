@@ -8,8 +8,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="logo">
-              <span className="logo-icon">💕</span>
-              <span className="logo-text">MatchMate</span>
+              <span className="logo-text">Vasantham Nadar Matrimony</span>
             </div>
             <p>Finding your perfect life partner made simple, secure, and special.</p>
             <div className="social-icons">

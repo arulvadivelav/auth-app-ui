@@ -1,11 +1,10 @@
 /* Global styles for homepage */
 .homepage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fff5f7 0%, #ffe4e8 100%);
 }
 
+
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -15,20 +14,6 @@
   margin-bottom: 48px;
 }
 
-.section-header h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #b83b5e, #f09d9d);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 12px;
-}
-
-.section-header p {
-  color: #6b4e5e;
-  font-size: 1rem;
-}
 
 /* Base Button Styles */
 .btn-primary {
@@ -43,24 +28,18 @@
   font-size: 0.9rem;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201, 62, 100, 0.3);
-}
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #e86f8c;
-  padding: 8px 20px;
+  background: linear-gradient(135deg, #e86f8c, #c93e64);
+  padding: 10px 22px;
   border-radius: 40px;
-  color: #c93e64;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: #e86f8c;
   color: white;
 }
 

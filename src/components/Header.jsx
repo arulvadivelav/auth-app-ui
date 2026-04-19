@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import '../styles/components/Header.css';
+import logo from "../assets/logo/new-logo.png";
 
 const Header = () => {
 
@@ -11,34 +11,41 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header-container">
+
+        {/* Logo */}
         <div className="logo">
-          <span className="logo-icon">💕</span>
-          <span className="logo-text">MatchMate</span>
+          <img src={logo} alt="Logo" className="logo-img" />
+          <span className="logo-text">Vasantham Nadar Matrimony</span>
         </div>
 
+        {/* Nav */}
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-links">
-            <Link to="#">Home</Link>
-            <Link to="#">Profiles</Link>
-            <Link to="#">About</Link>
-            <Link to="/profiles">Profiles</Link>
-            <Link to="#">Contact</Link>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/contact-us">Contact</Link></li>
           </ul>
+
           <div className="nav-buttons">
-            <button className="btn-outline" onClick={() => navigate("/login")}>Login</button>
-            <button className="btn-primary" onClick={() => navigate("/register")}>Register</button>
+            <button className="btn-outline" onClick={() => navigate("/login")}>
+              Login
+            </button>
+            <button className="btn-primary" onClick={() => navigate("/register")}>
+              Register
+            </button>
           </div>
         </nav>
 
-        <button 
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+        {/* Hamburger */}
+        <button
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
+
       </div>
     </header>
   );

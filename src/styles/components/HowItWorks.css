@@ -3,6 +3,19 @@
   background: linear-gradient(135deg, #fff0f3, #ffe4e8);
 }
 
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #c93e64;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 1rem;
+}
+
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -29,7 +42,7 @@
   left: 20px;
   width: 35px;
   height: 35px;
-  background: linear-gradient(135deg, #e86f8c, #c93e64);
+  background: linear-gradient(135deg, #e86f8c, #a32b41);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -60,5 +73,9 @@
 
   .step-card {
     padding: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
   }
 }

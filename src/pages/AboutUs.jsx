@@ -8,7 +8,7 @@ import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import '../styles/HomePage.css';
 
-const HomePage = () => {
+const AboutUs = () => {
   const handleSearch = (filters) => {
     console.log('Searching with filters:', filters);
     alert(`Searching for: ${filters.keyword || 'all profiles'} with filters applied!`);
@@ -17,11 +17,11 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <Hero />
-      {/* <SearchSection onSearch={handleSearch} /> */}
-      <HowItWorks />
+      <WhyChooseUs />
+      <Testimonials />
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
+export default AboutUs;
