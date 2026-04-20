@@ -22,10 +22,6 @@ const SearchSection = ({ onSearch }) => {
   return (
     <section className="search-section">
       <div className="container">
-        <div className="section-header">
-          <h2>Find Your Match</h2>
-          <p>Use filters to discover compatible profiles</p>
-        </div>
         <form className="search-form" onSubmit={handleSubmit}>
           <div className="search-row">
             <input

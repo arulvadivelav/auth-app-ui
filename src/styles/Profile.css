@@ -1,0 +1,516 @@
+/* =========================
+   PAGE CONTAINER (Contact Theme)
+========================= */
+.contact-container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+}
+
+/* Grid - 3 cards per row */
+.profile-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Large screens (optional 3 cards if very wide monitor) */
+@media (min-width: 1400px) {
+  .profile-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .profile-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+/* Card - Increased height */
+.profile-card-details {
+  background: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+  padding: 15px;
+}
+
+.profile-card-details:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #fff, #fff5f7);
+  color: #333;
+  box-shadow: 0 20px 40px rgba(255, 111, 145, 0.2);
+}
+
+.profile-card-image {
+  width: 100%;
+  height: 260px; /* consistent premium size */
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* KEY FIX HERE */
+.profile-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* ✅ removes zoom/cropping */
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card-details h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #c93e64;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ffe4e1;
+}
+
+/* Card Sections */
+.card-section {
+  margin-bottom: 18px;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff6f91;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.card-details p {
+  font-size: 13px;
+  margin: 6px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #888;
+  min-width: 70px;
+  display: inline-block;
+}
+
+.profile-card-details:hover .card-details p {
+  color: #555;
+}
+
+.profile-card-details:hover .detail-label {
+  color: #666;
+}
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+.modal-box {
+  background: linear-gradient(135deg, #fff, #fff5f7);
+  width: 90%;
+  max-width: 800px;
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+
+  /* 🔥 FIX SCROLL */
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  animation: popIn 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   TOP ACTION BUTTONS
+========================= */
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 🔥 important */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ffe4e1;
+  position: relative;
+}
+
+.action-btn {
+  flex: 1;
+  white-space: nowrap;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f0f0f0;
+  color: #666;
+}
+
+.action-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.action-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.like-btn.active {
+  background: #ff4757;
+  color: white;
+}
+
+.connect-btn.active {
+  background: #1abc9c;
+  color: white;
+}
+
+.favorite-btn.active {
+  background: #f39c12;
+  color: white;
+}
+
+.like-btn:not(:disabled):hover {
+  background: #ff6b81;
+  color: white;
+}
+
+.connect-btn:not(:disabled):hover {
+  background: #2ecc71;
+  color: white;
+}
+
+.favorite-btn:not(:disabled):hover {
+  background: #f1c40f;
+  color: white;
+}
+
+/* =========================
+   IMAGE SLIDER
+========================= */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.slider img {
+  width: 80%;
+  height: 350px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btn {
+  background: linear-gradient(135deg, #ff6f91, #ff9671);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 111, 145, 0.4);
+}
+
+/* =========================
+   MODAL CONTENT - LEFT ALIGNED
+========================= */
+.modal-content {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.modal-content h2 {
+  color: #c93e64;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  border-left: 4px solid #ff6f91;
+  padding-left: 15px;
+}
+
+/* Details Sections */
+.details-section {
+  margin-bottom: 25px;
+  padding: 0;
+}
+
+.section-title {
+  color: #c93e64;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffe4e1;
+  text-align: left;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #666;
+  min-width: 100px;
+}
+
+.detail-value {
+  color: #333;
+  flex: 1;
+}
+
+.about-text {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Button */
+.view-profile-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff6f91, #ff9671);
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.view-profile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 111, 145, 0.4);
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.close-btn {
+  top: 15px;
+  right: 15px;
+  background: #ff4757;
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+  background: #ff3838;
+}
+
+/* =========================
+   SCROLLBAR STYLING
+========================= */
+.modal-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+  background: #ffe4e1;
+  border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+  background: #ff6f91;
+  border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+  background: #c93e64;
+}
+
+.profile-deatils-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.card-section-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+@media (max-width: 768px) {
+  .profile-card-details {
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .profile-card-image {
+    height: 200px;
+  }
+  
+  .slider img {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .modal-box {
+    padding: 20px;
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .detail-label {
+    min-width: 90px;
+  }
+  
+  .modal-actions {
+    gap: 10px;
+  }
+  
+  .action-btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 40px 15px;
+  }
+  
+  .slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .modal-box {
+    padding: 15px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  .profile-card-details h3 {
+    font-size: 20px;
+  }
+  
+  .section-label {
+    font-size: 12px;
+  }
+  
+  .card-details p {
+    font-size: 12px;
+  }
+}
